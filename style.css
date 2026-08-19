@@ -22,7 +22,6 @@ body{
   flex-direction:column;
 }
 
-
 .topbar{
   display:flex;
   align-items:center;
@@ -45,7 +44,6 @@ body{
 .status-pill.busy .dot{background: var(--gold); animation: pulse 1s infinite;}
 .status-pill.error .dot{background: var(--danger);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-
 
 .layout{
   flex:1;
@@ -80,7 +78,6 @@ body{
 .result-head{display:flex; align-items:center; justify-content:space-between;}
 .result-head h2{border-bottom:none; margin:0; padding:0;}
 
-
 .upload-box{
   border: 1.5px dashed var(--line);
   border-radius: var(--radius);
@@ -107,7 +104,6 @@ body{
   text-decoration:underline; cursor:pointer; font-family:inherit; font-size:.82rem; padding:0;
 }
 
-
 .page-nav{
   display:flex; align-items:center; justify-content:center; gap:14px;
   margin-top: 16px;
@@ -126,7 +122,6 @@ body{
   border:1px solid var(--line); font-family:inherit; font-size:.9rem;
 }
 
-
 .preview-wrap{
   margin-top:16px;
   border:1px solid var(--line);
@@ -143,7 +138,6 @@ body{
   background: rgba(23,36,43,.88); color:#f4f2ec;
   font-size:.78rem; text-align:center; padding:6px;
 }
-
 
 .actions-grid{
   display:grid; grid-template-columns: 1fr 1fr; gap:10px;
@@ -168,7 +162,6 @@ body{
   background: var(--gold); border-color: var(--gold);
 }
 .a-icon{font-size:1.05rem;}
-
 
 .result-body{
   flex:1;

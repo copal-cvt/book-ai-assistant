@@ -103,7 +103,6 @@ function goToPage(n) {
   renderPage(n);
 }
 
-
 async function renderPage(num) {
   setStatus("در حال آماده‌سازی صفحه…", "busy");
   prevPageBtn.disabled = num <= 1;
@@ -116,7 +115,7 @@ async function renderPage(num) {
   const ctx = pdfCanvas.getContext("2d");
   pdfCanvas.width = viewport.width;
   pdfCanvas.height = viewport.height;
-  ctx.fillStyle = "#ffffff";
+  ctx.fillStyle = "#ffffff"; 
   ctx.fillRect(0, 0, pdfCanvas.width, pdfCanvas.height);
 
   if (renderTask) { try { renderTask.cancel(); } catch (_) {} }

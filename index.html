@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دستیار مطالعه کتاب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-mark">کتاب‌یار</span>
+      <span class="brand-sub">دستیار مطالعه هوشمند</span>
+    </div>
+    <div class="status-pill" id="statusPill">
+      <span class="dot"></span>
+      <span id="statusText">آماده</span>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="panel panel-right">
+      <div class="panel-head">
+        <h2>۱. آپلود فایل</h2>
+      </div>
+
+      <div class="upload-box" id="uploadBox">
+        <input type="file" id="pdfInput" accept="application/pdf" hidden>
+        <div class="upload-inner" id="uploadInner">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 3v12m0-12 4 4m-4-4-4 4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+          </svg>
+          <p><b>فایل PDF کتاب را بکشید و رها کنید</b><br>یا برای انتخاب فایل کلیک کنید</p>
+        </div>
+        <div class="file-meta" id="fileMeta" hidden>
+          <span id="fileName"></span>
+          <button id="changeFileBtn" class="link-btn">تغییر فایل</button>
+        </div>
+      </div>
+
+      <div class="page-nav" id="pageNav" hidden>
+        <button id="prevPage" class="nav-btn" title="صفحه قبل">›</button>
+        <div class="page-jump">
+          <input type="number" id="pageInput" min="1" value="1">
+          <span>از <span id="pageCount">-</span></span>
+        </div>
+        <button id="nextPage" class="nav-btn" title="صفحه بعد">‹</button>
+      </div>
+
+      <div class="preview-wrap" id="previewWrap" hidden>
+        <canvas id="pdfCanvas"></canvas>
+        <div class="shot-flag" id="shotFlag" hidden>در حال آماده‌سازی تصویر صفحه برای ارسال به هوش مصنوعی…</div>
+      </div>
+
+      <div class="panel-head actions-head">
+        <h2>۲. عملیات </h2>
+      </div>
+      <div class="actions-grid">
+        <button class="action-btn" data-action="translate" disabled>
+          <span class="a-icon">🌐</span><span>ترجمه</span>
+        </button>
+        <button class="action-btn" data-action="summarize" disabled>
+          <span class="a-icon">📝</span><span>خلاصه‌سازی</span>
+        </button>
+        <button class="action-btn" data-action="qa" disabled>
+          <span class="a-icon">❓</span><span>ایجاد ۱۰ سوال و پاسخ</span>
+        </button>
+        <button class="action-btn" data-action="mindmap" disabled>
+          <span class="a-icon">🧠</span><span>نقشه ذهنی</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="panel panel-left">
+      <div class="panel-head result-head">
+        <h2 id="resultTitle">۳. نتیجه</h2>
+        <button id="copyResult" class="link-btn" hidden>کپی</button>
+      </div>
+      <div class="result-body" id="resultBody">
+        <div class="empty-state">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M4 6h16M4 12h10M4 18h7"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
